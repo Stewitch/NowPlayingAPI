@@ -12,6 +12,6 @@ class SongInfo(BaseModel):
         json_schema_extra = {
             "example": {
                 "process_name": "spotify.exe",
-                "song_title": "Never Gonna Give You Up - Rick Astley"
+                "song_title": "Rick Astley - Never Gonna Give You Up"
             }
         }

@@ -12,6 +12,10 @@ app = FastAPI(
     version="0.1.1",
 )
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the NowPlayingAPI!"}
+
 @app.get(
     "/now_playing",
     response_model=List[SongInfo],
