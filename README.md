@@ -61,7 +61,7 @@ You can configure server's IP address and port by create a `.env` file, see [Con
 To run the MCP server for AI assistant integration:
 
 ```bash
-uv run python mcp_server.py
+uv run mcp_server.py
 ```
 
 For detailed MCP server usage, see [MCP_SERVER.md](MCP_SERVER.md).
