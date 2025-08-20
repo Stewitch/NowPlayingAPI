@@ -1,7 +1,7 @@
 # NowPlayingAPI
 
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-Apache2.0-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Apache2.0](https://img.shields.io/badge/License-Apache2.0-yellow.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Built with FastAPI](https://img.shields.io/badge/Built%20with-FastAPI-green.svg)](https://fastapi.tiangolo.com/)
 
 A lightweight, caching, and production-ready FastAPI service for Windows to get the currently playing song from various music players. Also includes an MCP (Model Context Protocol) server for integration with AI assistants.
