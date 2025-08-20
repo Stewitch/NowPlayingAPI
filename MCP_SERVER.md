@@ -39,7 +39,7 @@ To use this server with an MCP client, add the following configuration:
   "mcpServers": {
     "now-playing": {
       "command": "uv",
-      "args": ["run", "python", "mcp_server.py"],
+      "args": ["run", "mcp_server.py"],
       "cwd": "/path/to/NowPlayingAPI"
     }
   }
