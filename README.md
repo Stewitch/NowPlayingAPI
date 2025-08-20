@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-Apache2.0-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Built with FastAPI](https://img.shields.io/badge/Built%20with-FastAPI-green.svg)](https://fastapi.tiangolo.com/)
 
-A lightweight, caching, and production-ready FastAPI service for Windows to get the currently playing song from various music players.
+A lightweight, caching, and production-ready FastAPI service for Windows to get the currently playing song from various music players. Also includes an MCP (Model Context Protocol) server for integration with AI assistants.
 
 Now support *Spotify*, *QQMusic* and *NeteaseMusic*.
 
@@ -15,6 +15,7 @@ Now support *Spotify*, *QQMusic* and *NeteaseMusic*.
 -   **Real-time Song Detection**: Scans active audio sessions on Windows to find song titles.
 -   **Built-in Caching**: Avoids excessive system calls with a simple time-based cache.
 -   **Extensible Configuration**: Easily add new target music players by editing the config file.
+-   **MCP Server**: Includes an MCP (Model Context Protocol) server for AI assistant integration.
 
 ## Prerequisites
 
@@ -43,6 +44,8 @@ Follow these steps to get the project running on your local machine.
 
 ## Running the Server
 
+### FastAPI Server
+
 Once the setup is complete, you can start the API server with one command.
 
 ```bash
@@ -52,6 +55,16 @@ uv run main.py --reload
 The `--reload` flag enables hot-reloading, which is useful for development. The server will be available at `http://127.0.0.1:8000`.
 
 You can configure server's IP address and port by create a `.env` file, see [Configuration](#configuration)
+
+### MCP Server
+
+To run the MCP server for AI assistant integration:
+
+```bash
+uv run python mcp_server.py
+```
+
+For detailed MCP server usage, see [MCP_SERVER.md](MCP_SERVER.md).
 
 ## API Usage
 
@@ -120,12 +133,15 @@ NowPlayingAPI/
 |   └── nowplayingapi/
 |       ├── config.py     # Basic configs
 |       ├── models.py     # Data models
-|       └── services.py   # Core logic
+|       ├── services.py   # Core logic
+|       └── platform_wrapper.py # Cross-platform wrapper
 ├── .env                  # Server configs (if you created)
 ├── .gitignore
 ├── .python-version
 ├── LICENSE
 ├── main.py               # FastAPI application
+├── mcp_server.py         # MCP server for AI integration
+├── MCP_SERVER.md         # MCP server documentation
 ├── pyproject.toml
 └── uv.lock
 ```
