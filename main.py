@@ -9,7 +9,7 @@ from src.nowplayingapi.config import settings
 app = FastAPI(
     title="NowPlayingAPI",
     description="A simple API to get the current playing song from various music players on Windows.",
-    version="0.1.2",
+    version="0.2.1",
 )
 
 @app.get("/")

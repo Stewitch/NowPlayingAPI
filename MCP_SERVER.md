@@ -24,22 +24,11 @@ The MCP server provides a single tool:
 Run the MCP server:
 
 ```bash
-uv run python mcp_server.py
+uv run mcp_server.py
 ```
 
 The server will run on stdio and communicate using the MCP protocol.
 
-### Testing the Server
-
-You can test the server components without running the full MCP protocol:
-
-```bash
-# Test basic functionality
-uv run python test_mcp.py
-
-# Test tool functionality
-uv run python test_tool.py
-```
 
 ## MCP Client Configuration
 
@@ -60,7 +49,8 @@ To use this server with an MCP client, add the following configuration:
 ## Platform Support
 
 - **Windows**: Full functionality with actual music player detection
-- **Linux/macOS**: Mock data for development and testing purposes
+
+> MacOS/Linux currently not supported.
 
 ## Tool Schema
 
@@ -73,8 +63,9 @@ To use this server with an MCP client, add the following configuration:
 **Output**: Text response with currently playing songs, formatted as:
 ```
 Currently playing:
-🎵 Song Title - Artist (from spotify.exe)
-🎵 Another Song (from qqmusic.exe)
+🎵 Artist - Song Title (from spotify.exe)
+🎵 Another Song - Artist (from qqmusic.exe)
+🎵 One More Song - Artist (from cloudmusic.exe)
 ```
 
 If no music is playing, returns: "No music is currently playing."

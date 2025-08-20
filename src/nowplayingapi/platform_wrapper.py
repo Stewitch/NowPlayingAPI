@@ -2,7 +2,6 @@
 Platform-aware wrapper for now playing functionality.
 Provides mock implementations for non-Windows platforms.
 """
-import platform
 import sys
 from typing import List
 
@@ -18,10 +17,4 @@ def get_now_playing_info() -> List[SongInfo]:
         from .services import get_now_playing_info as _get_now_playing_info
         return _get_now_playing_info()
     else:
-        # Return mock data for non-Windows platforms (for development/testing)
-        return [
-            SongInfo(
-                process_name="spotify.exe",
-                song_title="Mock Song - Mock Artist (Development Mode)"
-            )
-        ]
+        raise NotImplementedError("Now playing information is not supported on this platform.")

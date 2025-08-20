@@ -1,4 +1,6 @@
 from pydantic import BaseModel
+from mcp.server.models import InitializationOptions
+from mcp.types import ServerCapabilities, ToolsCapability
 
 class SongInfo(BaseModel):
     """
@@ -15,3 +17,14 @@ class SongInfo(BaseModel):
                 "song_title": "Rick Astley - Never Gonna Give You Up"
             }
         }
+
+
+server_init_options = InitializationOptions(
+    server_name="now-playing-mcp-server",
+    server_version="0.2.1",
+    capabilities=ServerCapabilities(
+        tools=ToolsCapability(
+            listChanged=False
+        )
+    )
+)

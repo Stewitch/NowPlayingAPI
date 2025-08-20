@@ -1,17 +1,16 @@
-#!/usr/bin/env python3
 """
 MCP Server for Now Playing API
 Provides a single tool 'now_playing' that returns currently playing song information.
 """
 import asyncio
-import json
-from typing import Any, Sequence
+from typing import Any
 
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
-from mcp.types import Tool, TextContent, CallToolRequest
+from mcp.types import Tool, TextContent
 
 from src.nowplayingapi.platform_wrapper import get_now_playing_info
+from src.nowplayingapi.models import server_init_options
 
 # Create the server instance
 server = Server("now-playing-mcp-server")
@@ -72,6 +71,7 @@ async def main():
         await server.run(
             read_stream,
             write_stream,
+            server_init_options
         )
 
 if __name__ == "__main__":
